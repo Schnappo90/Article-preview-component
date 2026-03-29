@@ -88,12 +88,39 @@ h1 {
 main p {
     line-height: 1.6;
     font-size: 0.83rem;
-    color: var(--color-desaturated-dark-blue)
+    color: var(--color-desaturated-dark-blue);
+    margin-block-end: 1rem;
+}
+
+
+/* ===== Card Footer ===== */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1rem;
+    position: relative;
+}
+
+.footer-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 .user-avatar {
     width: 40px;
     border-radius: 50px;
+}
+
+.footer-group p {
+    font-weight: var(--font-weight-bold);
+}
+
+time {
+    color: var(--color-grayish-blue)
 }
 
 button {
@@ -105,8 +132,59 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 9999;
+    cursor: pointer;
+
 }
 
 button img {
     width: 15px;
+}
+
+/* ===== Social Menu ===== */
+
+#share-menu {
+    z-index: 9998;
+    position: absolute;
+    background-color: var(--color-very-dark-grayish-blue);
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding-inline: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.25rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity ease-in 0.2s; /* change to a slide-in animation */
+}
+
+#share-menu.open {
+    visibility: visible;
+    opacity: 100%;
+}
+
+#share-menu p {
+    letter-spacing: 0.25rem;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav ul li {
+    cursor: pointer;
+}
+
+button.open {
+    background-color: var(--color-desaturated-dark-blue);
+}
+
+button.open path {
+    fill: white;
 }
