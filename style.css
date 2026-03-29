@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+/* ===== Custom Properties ===== */
+
+:root {
+    /* Colors */
+    --color-very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --color-desaturated-dark-blue: hsl(214, 17%, 51%);
+    --color-grayish-blue: hsl(212, 23%, 69%);
+    --color-light-grayish-blue: hsl(210, 46%, 95%);
+
+    /* Typography */
+    --font-family: 'Manrope', sans-serif;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-size-body: 13px;
+
+    /* Breakpoints (for reference in comments) */
+    /* Mobile: 375px | Desktop: 1440px */
+}
+
+/* ===== Base Reset ===== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Base / Global ===== */
+
+body {
+    min-height: 100vh;
+    font-family: var(--font-family);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-desaturated-dark-blue);
+    background-color: var(--color-light-grayish-blue);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1.5rem;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.social-icon {
+    width: 20px;
+}
+
+
+/* ===== Card Component ===== */
+
+article {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+figure img {
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+main, 
+footer {
+    padding: 0 2rem;
+}
+
+h1 {
+    font-size: 1rem;
+    color: var(--color-very-dark-grayish-blue);
+    margin-block: 2rem 1rem;
+}
+
+main p {
+    line-height: 1.6;
+    font-size: 0.83rem;
+    color: var(--color-desaturated-dark-blue)
+}
+
+.user-avatar {
+    width: 40px;
+    border-radius: 50px;
+}
+
+button {
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    background-color: var(--color-light-grayish-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button img {
+    width: 15px;
+}
