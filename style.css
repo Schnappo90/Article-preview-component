@@ -89,7 +89,7 @@ figure img {
     border-top-right-radius: var(--border-radius-card);
 }
 
-main,
+.main,
 footer {
     padding: 0 2rem;
 }
@@ -100,7 +100,7 @@ h1 {
     margin-block: 2rem 1rem;
 }
 
-main p {
+.main p {
     line-height: 1.6;
     font-size: 0.83rem;
     margin-block-end: 1rem;
@@ -217,12 +217,12 @@ button.open path {
         overflow: visible;
     }
 
-    main,
+    .main,
     footer {
     padding-inline-end: 2.5rem;
 }
 
-    main p {
+    .main p {
         margin-block-end: 0;
     }
 
