@@ -217,6 +217,11 @@ button.open path {
         overflow: visible;
     }
 
+    main,
+    footer {
+    padding-inline-end: 2.5rem;
+}
+
     main p {
         margin-block-end: 0;
     }
