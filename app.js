@@ -11,7 +11,10 @@
     shareButton.classList.toggle("open");
     socialMenu.classList.toggle("open");
 
-    shareButton.ariaExpanded = String(shareButton.classList.contains("open"));
+    shareButton.setAttribute(
+      "ariaExpanded",
+      String(shareButton.classList.contains("open")),
+    );
   });
 
   document.addEventListener("click", (e) => {
@@ -21,7 +24,7 @@
     ) {
       shareButton.classList.remove("open");
       socialMenu.classList.remove("open");
-      shareButton.ariaExpanded = "false";
+      shareButton.setAttribute("ariaExpanded", "false");
     }
   });
 })();
