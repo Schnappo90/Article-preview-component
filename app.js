@@ -1,7 +1,15 @@
-const shareMenu = document.getElementById('share-menu')
-const shareButton = document.querySelector('button');
+(() => {
+  const socialMenu = document.getElementById("share-menu");
+  const shareButton = document.querySelector("button");
 
-shareButton.addEventListener("click", () => {
-    shareButton.classList.toggle('open')
-    shareMenu.classList.toggle('open')
-})
+  if (!socialMenu || !shareButton) {
+    return console.error("Required elements not found");
+  }
+
+  shareButton.addEventListener("click", () => {
+    shareButton.classList.toggle("open");
+    socialMenu.classList.toggle("open");
+
+    shareButton.ariaExpanded = String(shareButton.classList.contains("open"));
+  });
+})();

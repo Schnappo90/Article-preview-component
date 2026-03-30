@@ -15,6 +15,15 @@
     --font-weight-bold: 700;
     --font-size-body: 13px;
 
+    /* Border Radius */
+    --border-radius-card: 0.5rem;
+    --border-radius-menu: 0.769rem;
+    --border-radius-circle: 50%;
+
+    /* Shadows */
+    --box-shadow-card: 0px 15px 25px 0px hsla(217, 19%, 35%, 0.109);
+    --box-shadow-menu: 0px 15px 25px 0px hsla(217, 19%, 35%, 0.15);
+
     /* Breakpoints (for reference in comments) */
     /* Mobile: 375px | Desktop: 1440px */
 }
@@ -38,7 +47,6 @@ body {
     font-weight: var(--font-weight-medium);
     color: var(--color-desaturated-dark-blue);
     background-color: var(--color-light-grayish-blue);
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,11 +71,9 @@ img {
 
 article {
     background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0px 15px 25px 0px hsla(217, 19%, 35%, 0.109);
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--box-shadow-card);
     max-width: 375px;
-    overflow: hidden;
-
 }
 
 figure {
@@ -79,6 +85,8 @@ figure img {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    border-top-left-radius: var(--border-radius-card);
+    border-top-right-radius: var(--border-radius-card);
 }
 
 main,
@@ -95,7 +103,6 @@ h1 {
 main p {
     line-height: 1.6;
     font-size: 0.83rem;
-    color: var(--color-desaturated-dark-blue);
     margin-block-end: 1rem;
 }
 
@@ -119,7 +126,7 @@ footer {
 
 .user-avatar {
     width: 40px;
-    border-radius: 50px;
+    border-radius: var(--border-radius-circle);
 }
 
 .footer-group p {
@@ -127,21 +134,21 @@ footer {
 }
 
 time {
-    color: var(--color-grayish-blue)
+    color: var(--color-grayish-blue);
 }
 
 button {
     border: none;
     height: 30px;
     width: 30px;
-    border-radius: 50px;
+    border-radius: var(--border-radius-circle);
     background-color: var(--color-light-grayish-blue);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
     cursor: pointer;
-
+    position: relative;
 }
 
 button img {
@@ -155,8 +162,8 @@ button img {
     position: absolute;
     background-color: var(--color-very-dark-grayish-blue);
     width: 100%;
-    top: 0;
     bottom: 0;
+    top: 0;
     left: 0;
     padding-inline: 2rem;
     display: flex;
@@ -166,7 +173,8 @@ button img {
     visibility: hidden;
     opacity: 0;
     transition: opacity ease-in 0.1s;
-    /* change to a slide-in animation */
+    border-bottom-left-radius: var(--border-radius-card);
+    border-bottom-right-radius: var(--border-radius-card);
 }
 
 #share-menu.open {
@@ -197,23 +205,71 @@ button.open path {
     fill: white;
 }
 
+
+
 @media (min-width: 48rem) {
+
+    /*==== Card Component ====*/
     article {
         display: grid;
         grid-template-columns: 1fr 1.5fr;
         max-width: 730px;
-        /* overflow: visible; */
+        overflow: visible;
     }
 
+    main p {
+        margin-block-end: 0;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    /* ==== Figure ==== */
     figure {
         height: 100%;
     }
 
     figure img {
         object-position: left;
-    } 
+        border-bottom-left-radius: var(--border-radius-card);
+        border-top-right-radius: 0;
+    }
 
-    h1 {
-        font-size: 1.25rem
+    /* ==== Card Footer ==== */
+
+    footer {
+        position: initial;
+        padding-bottom: 2rem;
+    }
+
+    .share-wrapper {
+        position: relative;
+    }
+
+    /* ==== Social Menu ==== */
+    #share-menu {
+        position: absolute;
+        bottom: 170%;
+        left: 50%;
+        right: auto;
+        top: auto;
+        transform: translateX(-50%);
+        width: max-content;
+        padding: 1rem 2.3rem;
+        border-radius: var(--border-radius-menu);
+        justify-content: center;
+        box-shadow: var(--box-shadow-menu);
+    }
+
+    #share-menu::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 12px;
+        border-style: solid;
+        border-color: var(--color-very-dark-grayish-blue) transparent transparent transparent;
     }
 }
